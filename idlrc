@@ -1,0 +1,15 @@
+; In order to automatically load the SDF reader routines for IDL, copy this
+; file to $HOME/.idlrc and add the following line to $HOME/.bashrc
+;
+;export IDL_STARTUP=$HOME/.idlrc
+;
+
+SDF_PATH = GETENV('HOME') + '/dev/epoch/epoch1d'
+
+!path = SDF_PATH + PATH_SEP(/SEARCH_PATH) + !path
+
+; If you only want the routines added to your path and not automatically loaded
+; when IDL starts, comment out the following line using a semicolon.
+; To load the reader, just type '@Start' from the IDL prompt.
+
+@Start

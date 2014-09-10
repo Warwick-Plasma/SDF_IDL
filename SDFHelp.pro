@@ -25,14 +25,14 @@ PRO init_SDFHelp
   COMPILE_OPT idl2, hidden
   COMMON SDF_Common_data, SDF_Common, SDF_Blocktypes, SDF_Blocktype_names, $
       SDF_Datatypes, SDF_Error
-  
+
   SDF_Common = { $
       ID_LENGTH:32L, $
       ENDIANNESS:16911887L, $
       VERSION:1L, $
       REVISION:3L, $
       MAGIC:"SDF1" }
-  
+
   SDF_Blocktypes = { $
       SCRUBBED:-1L, $
       NULL:0L, $
@@ -50,7 +50,7 @@ PRO init_SDFHelp
       STITCHED_SPECIES:12L, $
       FAMILY:13L,$
       LAGRANGIAN_MESH:25L }
-  
+
   SDF_Blocktype_names = [ $
       "Invalid block", $
       "Plain mesh", $
@@ -67,7 +67,7 @@ PRO init_SDFHelp
       "Stitched species", $
       "Particle family", $
       "Lagrangian mesh" ]
-  
+
   SDF_Datatypes = { $
       NULL:0L, $
       INTEGER4:1L, $
@@ -78,7 +78,7 @@ PRO init_SDFHelp
       CHARACTER:6L, $
       LOGICAL:7L, $
       OTHER:8L }
-  
+
   SDF_Error = { $
       NONE:0L, $
       BAD_USAGE:1L, $

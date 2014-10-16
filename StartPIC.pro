@@ -157,7 +157,7 @@ PRO init_StartPIC
 
   ;device, true_color=24
   device, decompose=0
-  device, retain=2
+  IF not gdl THEN device, retain=2
 
   !p.charsize = 2
   loadct, 3

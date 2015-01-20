@@ -118,7 +118,7 @@ PRO quick_view, wkdir, snapshot=snapshot
   COMMON background, wkdir_global
   ON_ERROR, 2
 
-  IF (N_ELEMENTS(wkdir_in) EQ 0) THEN wkdir = wkdir_global
+  IF (N_ELEMENTS(wkdir) EQ 0) THEN wkdir = wkdir_global
 
   a = create_sdf_visualizer(wkdir, snapshot=snapshot)
 END

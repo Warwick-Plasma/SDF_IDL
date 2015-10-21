@@ -60,7 +60,7 @@ FUNCTION LoadSDFFile, filename, _variables=requestv, _silent=silent, $
       summary_location:0LL, summary_size:0L, nblocks:0L, $
       block_header_length:0L, step:0L, time:0D, jobid1:0L, jobid2:0L, $
       string_length:0L, code_io_version:0L, restart_flag:BYTARR(1), $
-      subdomain_file:BYTARR(1), station_flag:BYTARR(1)}
+      subdomain_file:BYTARR(1), station_file:BYTARR(1)}
 
   CLOSE, 1
   OPENR, 1, filename

@@ -54,7 +54,12 @@ FUNCTION getdata, snapshot_in, wkdir_in, _EXTRA=extra
   IF (wkdir EQ '') THEN wkdir = wkdir_global
   IF (retro EQ -1) THEN retro = retro_global
 
-  file = wkdir + STRING(snapshot, FORMAT='("/",I04.04,".sdf")')
+  FOR i = 1,99 DO BEGIN
+    fmt = STRING(i, i, FORMAT='("(""/"",I",I02.02,".",I02.02,","".sdf"")")')
+    file = wkdir + STRING(snapshot, FORMAT=fmt)
+    IF FILE_TEST(file, /READ) NE 0 THEN BREAK
+  ENDFOR
+
   RETURN, LoadSDFFile(file, _retro=retro, _EXTRA=new_extra)
 END
 

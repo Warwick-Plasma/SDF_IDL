@@ -54,7 +54,11 @@ FUNCTION getdata, snapshot_in, wkdir_in, _EXTRA=extra
   IF (wkdir EQ '') THEN wkdir = wkdir_global
   IF (retro EQ -1) THEN retro = retro_global
 
-  min_zeros = FLOOR(ALOG10(snapshot)) + 1
+  IF (snapshot GT 0) THEN BEGIN
+    min_zeros = FLOOR(ALOG10(snapshot)) + 1
+  ENDIF ELSE BEGIN
+    min_zeros = 1
+  ENDELSE
 
   FOR i = min_zeros,99 DO BEGIN
     fmt = '("/",' + STRING(i, i, FORMAT='("I",I02.02,".",I02.02)') + ',".sdf")'

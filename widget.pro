@@ -1,3 +1,11 @@
+;
+; SDF (Self-Describing Format) IDL reader
+; Copyright (c) 2011-2016, SDF Development Team
+;
+; Distributed under the terms of the BSD 3-clause License.
+; See the LICENSE file for details.
+;
+
 PRO init_widget
   COMPILE_OPT idl2, hidden
   COMMON SDF_View_Internal_data, Loaded_Data, newline, use_retro

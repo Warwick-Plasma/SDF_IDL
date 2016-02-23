@@ -1,3 +1,11 @@
+;
+; SDF (Self-Describing Format) IDL reader
+; Copyright (c) 2010-2016, SDF Development Team
+;
+; Distributed under the terms of the BSD 3-clause License.
+; See the LICENSE file for details.
+;
+
 FUNCTION readvar, handle, varstruct, offset
 
   COMPILE_OPT idl2, hidden
@@ -115,7 +123,8 @@ FUNCTION LoadSDFFile, filename, _variables=requestv, _silent=silent, $
 
   ; The file seems valid, spool through blocks
 
-  f = {filename: filename, timestep: file_header.step, time: file_header.time}
+  f = {filename: filename, timestep: file_header.step, time: file_header.time, $
+       header: file_header}
 
   IF (N_ELEMENTS(requestv) NE 0 AND display) THEN BEGIN
     PRINT, "Available elements are "

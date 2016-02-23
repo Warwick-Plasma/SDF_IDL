@@ -1,3 +1,11 @@
+;
+; SDF (Self-Describing Format) IDL reader
+; Copyright (c) 2010-2016, SDF Development Team
+;
+; Distributed under the terms of the BSD 3-clause License.
+; See the LICENSE file for details.
+;
+
 ; Function to test whether a block name appears in a given namelist
 ; If the namelist is empty then the block is assumed valid
 FUNCTION SDFCheckName, blockheader, namelist, element_block

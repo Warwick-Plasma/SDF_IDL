@@ -51,6 +51,15 @@ FUNCTION LoadSDFFile, filename, _variables=requestv, _silent=silent, $
     RETURN, "Usage: result = LoadSDFFile(Filename[, /variables])"
   ENDIF
 
+  ; Test for file existence
+  result = FILE_TEST(filename, /READ)
+  IF (result EQ 0) THEN BEGIN
+    strerr = "File does not exist " + filename
+    IF (display) THEN PRINT, strerr
+    errcode = SDF_Error.BAD_FILE
+    RETURN, strerr
+  ENDIF
+
   ; array of names of parameters
   IF (N_ELEMENTS(extra) NE 0) THEN BEGIN
     name_arr = TAG_NAMES(extra)
@@ -71,7 +80,16 @@ FUNCTION LoadSDFFile, filename, _variables=requestv, _silent=silent, $
       subdomain_file:BYTARR(1), station_file:BYTARR(1)}
 
   CLOSE, 1
-  OPENR, 1, filename
+  OPENR, 1, filename, ERROR=result
+
+  ; Test for successful open
+  IF (result NE 0) THEN BEGIN
+    strerr = "Unable to open file " + filename
+    IF (display) THEN PRINT, strerr
+    errcode = SDF_Error.BAD_FILE
+    RETURN, strerr
+  ENDIF
+
   file_header = readvar(1, header_struct, 0)
 
   IF (file_header.endianness NE 16911887) THEN BEGIN

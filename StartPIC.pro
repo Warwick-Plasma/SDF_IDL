@@ -72,6 +72,7 @@ FUNCTION getdata, snapshot_in, wkdir_in, _EXTRA=extra
     fmt = '("/",' + STRING(i, i, FORMAT='("I",I02.02,".",I02.02)') + ',".sdf")'
     file = wkdir + STRING(snapshot, FORMAT=fmt)
     IF FILE_TEST(file, /READ) NE 0 THEN BREAK
+    file = ""
   ENDFOR
 
   RETURN, LoadSDFFile(file, _retro=retro, _EXTRA=new_extra)

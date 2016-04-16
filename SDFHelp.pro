@@ -92,7 +92,8 @@ PRO init_SDFHelp
       BAD_USAGE:1L, $
       BAD_MAGIC:2L, $
       BAD_VERSION:3L, $
-      BAD_BLOCK_COUNT:4L }
+      BAD_BLOCK_COUNT:4L, $
+      BAD_FILE:5L }
 END
 
 ; --------------------------------------------------------------------------

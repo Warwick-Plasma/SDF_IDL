@@ -12,7 +12,7 @@
 .r SDFHelp.pro
 .r StartPIC.pro
 .r widget.pro
-.r ReadDeck.pro
+.r ReadNameVal.pro
 
 init_StartPIC
 

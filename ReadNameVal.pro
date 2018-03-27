@@ -31,7 +31,7 @@ function parse_name_val, str, delim=delim, include_strings=include_strings
 END
 
 
-function ReadDeck, dir=dir, pref=pref, file=file
+function ReadNameVal, dir=dir, pref=pref, file=file
 ;Read from deck.status into a struct of the available constants
 ;Extracts all strings which are 'name = value'
 

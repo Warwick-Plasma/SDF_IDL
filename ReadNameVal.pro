@@ -1,3 +1,11 @@
+;
+; SDF (Self-Describing Format) IDL reader
+; Copyright (c) 2010-2016, SDF Development Team
+;
+; Distributed under the terms of the BSD 3-clause License.
+; See the LICENSE file for details.
+;
+
 function parse_name_val, str, delim=delim, include_strings=include_strings
 ;Parse a line like abc = xyz into a name-value pair
 ;Attempt to infer type of value (string, long or double)

@@ -548,6 +548,12 @@ PRO SDFGetPlainVar, file_header, block_header, output_struct, offset, md=md, $
       SDF_Datatypes.REAL8: BEGIN
         datastruct = CREATE_STRUCT(struct_name, DBLARR(var_header.dims))
       END
+      SDF_Datatypes.INTEGER4: BEGIN
+        datastruct = CREATE_STRUCT(struct_name, LONARR(var_header.dims))
+      END
+      SDF_Datatypes.INTEGER8: BEGIN
+        datastruct = CREATE_STRUCT(struct_name, LON64ARR(var_header.dims))
+      END
     ENDCASE
     offset = block_header.data_location
     d = readvar(1, datastruct, offset)
